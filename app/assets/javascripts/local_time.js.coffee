@@ -141,6 +141,7 @@ class RelativeTime
     sec = Math.round ms  / 1000
     min = Math.round sec / 60
     hr  = Math.round min / 60
+    day = Math.round hr  / 24
 
     if ms < 0
       null
@@ -157,7 +158,7 @@ class RelativeTime
     else if hr < 24
       "#{hr} hours"
     else
-      null
+      "#{day} days"
 
   relativeWeekday: ->
     switch @calendarDate.daysPassed()
